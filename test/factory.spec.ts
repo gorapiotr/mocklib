@@ -46,7 +46,7 @@ describe('Abstract factory', () => {
 
     });
 
-    it('create  SocketUser instance by SocketFactory', () => {
+    it('create SocketUser instance by SocketFactory', () => {
         const factory = new BasicFactory();
         let user = factory.createUser();
 

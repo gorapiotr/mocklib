@@ -6,7 +6,7 @@ export class SocketMock extends Mock {
     protected socketSettings: Array<any>;
     protected mock: Mock;
 
-    constructor(socketSettings: any, mock: Mock) {
+    constructor(socketSettings: Array<any>, mock: Mock) {
         super();
         this.socketSettings = socketSettings;
         this.mock = mock;

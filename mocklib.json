@@ -1,0 +1,5 @@
+{
+  "socketUrl": "localhost",
+  "socketPort": 8080,
+  "socketProtocol": "http://"
+}
