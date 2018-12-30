@@ -3,9 +3,9 @@ import 'mocha';
 import {BasicFactory} from "../src/factory/basic-factory";
 import {AMock} from "../src/model/amock";
 import {Mock} from "../src/model/mock";
-import {User} from "../src/mocks/user";
-import {SystemResponse} from "../src/mocks/system-response";
-import {ExternalApi} from "../src/mocks/external-api";
+import {User} from "../src/mocks/basic/user";
+import {SystemResponse} from "../src/mocks/basic/system-response";
+import {ExternalApi} from "../src/mocks/basic/external-api";
 
 describe('Abstract factory', () => {
 

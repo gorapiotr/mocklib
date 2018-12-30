@@ -1,8 +1,8 @@
 import {AFactory} from "./afactory";
 import {AMock} from "../model/amock";
-import {User} from "../mocks/user";
-import {SystemResponse} from "../mocks/system-response";
-import {ExternalApi} from "../mocks/external-api";
+import {User} from "../mocks/basic/user";
+import {SystemResponse} from "../mocks/basic/system-response";
+import {ExternalApi} from "../mocks/basic/external-api";
 
 export class BasicFactory extends AFactory {
     constructor() {

@@ -1,4 +1,4 @@
-import {Mock} from "../model/mock";
+import {Mock} from "../../model/mock";
 
 export class ExternalApi extends Mock {
     constructor() {
