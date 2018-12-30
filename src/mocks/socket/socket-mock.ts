@@ -1,13 +1,15 @@
-import {AMock} from "../../model/amock";
+import {Mock} from "../../model/mock";
 
 //socket decorator
-export class SocketMock extends AMock{
+export class SocketMock extends Mock {
 
     protected socketSettings: Array<any>;
+    protected mock: Mock;
 
-    constructor(socketSettings: any) {
+    constructor(socketSettings: any, mock: Mock) {
         super();
         this.socketSettings = socketSettings;
+        this.mock = mock;
     }
 
     public get SocketSettings() {
@@ -18,6 +20,6 @@ export class SocketMock extends AMock{
     }
 
     public getPayload(): Array<any> {
-        return [];
+        return this.mock.getPayload();
     }
 }

@@ -1,9 +1,9 @@
 import {AMock} from "../model/amock";
 
 export interface IFactory {
-    createUser(): AMock;
-    createSystemResponse(): AMock;
-    createExternalApi():AMock;
+    createUser(param?: any, mock?: any): AMock;
+    createSystemResponse(params?: any, mock?: any): AMock;
+    createExternalApi(params?: any, mock?: any):AMock;
 }
 
 export abstract class AFactory implements IFactory {
@@ -11,10 +11,10 @@ export abstract class AFactory implements IFactory {
 
     }
 
-    public abstract createUser(): AMock;
+    public abstract createUser(param?: any, mock?: any): AMock;
 
-    public abstract createSystemResponse(): AMock;
+    public abstract createSystemResponse(param?: any, mock?: any): AMock;
 
-    public abstract createExternalApi(): AMock;
+    public abstract createExternalApi(param?: any, mock?: any): AMock;
 }
 
