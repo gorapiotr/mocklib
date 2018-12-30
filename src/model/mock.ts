@@ -3,14 +3,14 @@ import {AMock} from "./amock";
 
 export class Mock extends AMock {
 
-    constructor(payload: []) {
-        super(payload);
+    constructor() {
+        super();
     }
 
     public setPayload(): void {
     }
 
-    public getPayload(): [] {
+    public getPayload(): Array<any> {
         return [];
     }
 }

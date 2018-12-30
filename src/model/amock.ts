@@ -1,19 +1,20 @@
 export abstract class AMock implements IMock {
 
-    protected payload: [];
+    protected payload: Array<any>;
 
-    constructor(payload: []) {
-        this.payload = payload;
+    constructor() {
+       this.payload = [];
     }
 
     abstract setPayload(): void;
 
-    abstract getPayload(): [];
+    abstract getPayload(): Array<any>;
 }
 
-interface IMock {
+export interface IMock {
 
     setPayload(): void;
-    getPayload(): [];
+
+    getPayload(): Array<any>;
 
 }
