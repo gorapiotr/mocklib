@@ -1,15 +1,15 @@
 import {expect} from 'chai';
 import 'mocha';
-import {BasicFactory} from "../src/factory/basic-factory";
-import {AMock} from "../src/model/amock";
-import {Mock} from "../src/model/mock";
-import {User} from "../src/mocks/basic/user";
-import {SystemResponse} from "../src/mocks/basic/system-response";
-import {ExternalApi} from "../src/mocks/basic/external-api";
-import {SocketFactory} from "../src/factory/socket-factory";
-import {SocketUser} from "../src/mocks/socket/socket-user";
-import {SocketSystemResponse} from "../src/mocks/socket/socket-system-response";
-import {SocketExternalApi} from "../src/mocks/socket/socket-external-api";
+import {BasicFactory} from "../../src/factory/basic-factory";
+import {AMock} from "../../src/model/amock";
+import {Mock} from "../../src/model/mock";
+import {User} from "../../src/mocks/basic/user";
+import {SystemResponse} from "../../src/mocks/basic/system-response";
+import {ExternalApi} from "../../src/mocks/basic/external-api";
+import {SocketFactory} from "../../src/factory/socket-factory";
+import {SocketUser} from "../../src/mocks/socket/socket-user";
+import {SocketSystemResponse} from "../../src/mocks/socket/socket-system-response";
+import {SocketExternalApi} from "../../src/mocks/socket/socket-external-api";
 
 describe('Abstract factory', () => {
 

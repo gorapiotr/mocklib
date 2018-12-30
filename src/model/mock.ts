@@ -7,10 +7,11 @@ export class Mock extends AMock {
         super();
     }
 
-    public setPayload(): void {
+    public setPayload(payload: Array<any>): void {
+        this.payload = JSON.parse(JSON.stringify(payload));
     }
 
     public getPayload(): Array<any> {
-        return [];
+        return this.payload;
     }
 }

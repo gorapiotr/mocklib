@@ -6,14 +6,14 @@ export abstract class AMock implements IMock {
        this.payload = [];
     }
 
-    abstract setPayload(): void;
+    abstract setPayload(payload: Array<any>): void;
 
     abstract getPayload(): Array<any>;
 }
 
 export interface IMock {
 
-    setPayload(): void;
+    setPayload(payload: Array<any>): void;
 
     getPayload(): Array<any>;
 

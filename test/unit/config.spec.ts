@@ -1,5 +1,5 @@
 import 'mocha';
-import {Config} from "../src/config";
+import {Config} from "../../src/config";
 import {expect} from 'chai';
 
 let fs: any = require("fs");
