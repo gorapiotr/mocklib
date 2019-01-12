@@ -3,36 +3,37 @@ import 'mocha';
 import {User} from "../../src/mocks/basic/user";
 import {SystemResponse} from "../../src/mocks/basic/system-response";
 import {ExternalApi} from "../../src/mocks/basic/external-api";
-import {SocketUser} from "../../src/mocks/socket/socket-user";
-import {SocketSystemResponse} from "../../src/mocks/socket/socket-system-response";
-import {SocketExternalApi} from "../../src/mocks/socket/socket-external-api";
+import {RestUser} from "../../src/mocks/rest/rest-user";
+import {RestSystemResponse} from "../../src/mocks/rest/rest-system-response";
+import {RestExternalApi} from "../../src/mocks/rest/rest-external-api";
 
 describe('Decorator', () => {
-    it('decorate User instance to SocketUser instance', () => {
+
+    it('decorate User instance to RestUser instance', () => {
         let user = new User();
-        const socketSettings: Array<any> = [];
-        let socketUser = new SocketUser(socketSettings, user);
+        const restSettings: Array<any> = [];
+        let restUser = new RestUser(restSettings, user);
 
-        expect(socketUser).to.be.an.instanceof(SocketUser);
-        expect(socketUser).to.not.be.an.instanceof(User);
+        expect(restUser).to.be.an.instanceof(RestUser);
+        expect(restUser).to.not.be.an.instanceof(User);
     });
 
-    it('decorate SystemResponse instance to SocketSystemResponse instance', () => {
+    it('decorate SystemResponse instance to RestSystemResponse instance', () => {
         let systemResponse = new SystemResponse();
-        const socketSettings: Array<any> = [];
-        let socketSystemResponse = new SocketSystemResponse(socketSettings, systemResponse);
+        const restSettings: Array<any> = [];
+        let restSystemResponse = new RestSystemResponse(restSettings, systemResponse);
 
-        expect(socketSystemResponse).to.be.an.instanceof(SocketSystemResponse);
-        expect(socketSystemResponse).to.not.be.an.instanceof(SystemResponse);
+        expect(restSystemResponse).to.be.an.instanceof(RestSystemResponse);
+        expect(restSystemResponse).to.not.be.an.instanceof(SystemResponse);
     });
 
-    it('decorate ExternalApi instance to SocketExternalApi instance', () => {
+    it('decorate ExternalApi instance to RestExternalApi instance', () => {
         let externalApi = new ExternalApi();
-        const socketSettings: Array<any> = [];
-        let socketExternalApi = new SocketExternalApi(socketSettings, externalApi);
+        const restSettings: Array<any> = [];
+        let restExternalApi = new RestExternalApi(restSettings, externalApi);
 
-        expect(socketExternalApi).to.be.an.instanceof(SocketExternalApi);
-        expect(socketExternalApi).to.not.be.an.instanceof(ExternalApi);
+        expect(restExternalApi).to.be.an.instanceof(RestExternalApi);
+        expect(restExternalApi).to.not.be.an.instanceof(ExternalApi);
     });
 
 });

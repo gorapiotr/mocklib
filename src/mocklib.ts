@@ -1,23 +1,26 @@
 import {Config} from "./config";
-import {BasicFactory} from "./factory/basic-factory";
 import {Mock} from "./model/mock";
+import 'reflect-metadata';
 
 export class Mocklib {
 
-    private mock: Mock;
+    private mocks: Mock[];
+    private config: Config;
 
     constructor() {
-        let config = Config.getInstance();
-        this.mock = new Mock();
+        this.config = Config.getInstance();
+        this.mocks = [];
     }
 
-    public registerMocks(mock:any): void {
-
-        const factory = new BasicFactory();
-        this.mock = factory.create(mock);
+    public registerMocks(): void {
     }
 
-    public runSocketServer(): void {
+    public registerMocksSocket() {
+    }
 
+    public connectToSocket() {
+    }
+
+    public disconnectSocket() {
     }
 }

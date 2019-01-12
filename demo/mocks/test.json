@@ -1,0 +1,8 @@
+{
+  "type": "user",
+  "name": "test",
+  "payload": {
+    "a": "a",
+    "b": "b"
+  }
+}

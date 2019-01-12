@@ -1,0 +1,10 @@
+[
+  {
+    "channel": "test",
+    "mock": "ola"
+  },
+  {
+    "channel": "ola",
+    "mock": "test"
+  }
+]

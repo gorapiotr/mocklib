@@ -5,7 +5,7 @@ import {expect} from 'chai';
 let fs: any = require("fs");
 const PATH = './mocklib.json';
 
-describe('Configuration', () => {
+describe('Configuration (Singleton)', () => {
 
     it('create config singleton', () => {
         let config1 = Config.getInstance();

@@ -1,0 +1,8 @@
+{
+  "type": "system-response",
+  "name": "ola",
+  "payload": {
+    "ola": "asdasd",
+    "dwadwa": "asdasd"
+  }
+}

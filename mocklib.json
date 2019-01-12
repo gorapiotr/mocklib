@@ -1,5 +1,7 @@
 {
-  "socketUrl": "localhost",
-  "socketPort": 8080,
-  "socketProtocol": "http://"
+  "socket": {
+    "url": "localhost",
+    "port": 3001,
+    "protocol": "http://"
+  }
 }

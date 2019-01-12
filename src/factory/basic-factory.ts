@@ -1,10 +1,10 @@
-import {AFactory} from "./afactory";
+import {Factory} from "./factory";
 import {AMock} from "../model/amock";
 import {User} from "../mocks/basic/user";
 import {SystemResponse} from "../mocks/basic/system-response";
 import {ExternalApi} from "../mocks/basic/external-api";
 
-export class BasicFactory extends AFactory {
+export class BasicFactory extends Factory {
     constructor() {
         super()
     }

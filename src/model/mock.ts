@@ -14,4 +14,12 @@ export class Mock extends AMock {
     public getPayload(): Array<any> {
         return this.payload;
     }
+
+    public setName(name: string): void {
+        this.name = name;
+    }
+
+    public getName(): string {
+        return this.name;
+    }
 }

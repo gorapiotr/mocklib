@@ -9,7 +9,7 @@ export interface IFactory {
     createExternalApi(params?: any, mock?: any): AMock;
 }
 
-export abstract class AFactory implements IFactory {
+export abstract class Factory implements IFactory {
     constructor() {
 
     }
@@ -24,7 +24,7 @@ export abstract class AFactory implements IFactory {
 
             let obj:Mock = new Mock();
 
-            switch (Object.keys(mock)[0]) {
+            switch (mock['type']) {
                 case 'user': {
                     obj = this.createUser();
                     break;
@@ -33,13 +33,14 @@ export abstract class AFactory implements IFactory {
                     obj = this.createSystemResponse();
                     break;
                 }
-                case 'external-api': {
+                case 'external-rest': {
                     obj = this.createExternalApi();
                     break;
                 }
             }
 
-            obj.setPayload(mock[Object.keys(mock)[0]]);
+            obj.setPayload(mock['payload']);
+            obj.setName(mock['name']);
             return obj;
     }
 }

@@ -6,10 +6,6 @@ import {Mock} from "../../src/model/mock";
 import {User} from "../../src/mocks/basic/user";
 import {SystemResponse} from "../../src/mocks/basic/system-response";
 import {ExternalApi} from "../../src/mocks/basic/external-api";
-import {SocketFactory} from "../../src/factory/socket-factory";
-import {SocketUser} from "../../src/mocks/socket/socket-user";
-import {SocketSystemResponse} from "../../src/mocks/socket/socket-system-response";
-import {SocketExternalApi} from "../../src/mocks/socket/socket-external-api";
 
 describe('Abstract factory', () => {
 
@@ -46,50 +42,41 @@ describe('Abstract factory', () => {
 
     });
 
-    it('create SocketUser instance by SocketFactory', () => {
+    it('create User instance with data', () => {
+
+        let data: any = {
+            "type": "user",
+            "name": "test",
+            "payload": {
+                "a": "a",
+                "b": "b"
+            }
+        };
+
         const factory = new BasicFactory();
-        let user = factory.createUser();
+        let user = factory.create(data);
 
-        const socketSettings: Array<any> = [];
-        const socketFactory = new SocketFactory();
-        let userSocket = socketFactory.createUser(socketSettings, user);
-
-        expect(userSocket).to.be.an.instanceof(AMock);
-        expect(userSocket).to.be.an.instanceof(Mock);
-        expect(userSocket).to.be.an.instanceof(SocketUser);
-        expect(userSocket).to.not.be.an.instanceof(User);
-
+        expect(user.getPayload()).to.eql(data['payload']);
+        expect(user.getName()).to.eql(data['name']);
+        expect(user).to.be.an.instanceof(User);
     });
 
-    it('create SocketSystemResponse instance by SocketFactory', () => {
+    it('create SystemResponse instance with data', () => {
+
+        let data: any = {
+            "type": "system-response",
+            "name": "test",
+            "payload": {
+                "a": "a",
+                "b": "b"
+            }
+        };
+
         const factory = new BasicFactory();
-        let systemResponse = factory.createSystemResponse();
+        let systemResponse = factory.create(data);
 
-        const socketSettings: Array<any> = [];
-        const socketFactory = new SocketFactory();
-        let socketSystemResponse = socketFactory.createSystemResponse(socketSettings, systemResponse);
-
-
-        expect(socketSystemResponse).to.be.an.instanceof(AMock);
-        expect(socketSystemResponse).to.be.an.instanceof(Mock);
-        expect(socketSystemResponse).to.be.an.instanceof(SocketSystemResponse);
-        expect(socketSystemResponse).to.not.be.an.instanceof(SystemResponse);
-
-    });
-
-    it('create SocketExternalApi instance by SocketFactory', () => {
-        const factory = new BasicFactory();
-        let externalApi = factory.createExternalApi();
-
-        const socketSettings: Array<any> = [];
-        const socketFactory = new SocketFactory();
-        let socketExternalApi = socketFactory.createExternalApi(socketSettings, externalApi);
-
-
-        expect(socketExternalApi).to.be.an.instanceof(AMock);
-        expect(socketExternalApi).to.be.an.instanceof(Mock);
-        expect(socketExternalApi).to.be.an.instanceof(SocketExternalApi);
-        expect(socketExternalApi).to.not.be.an.instanceof(ExternalApi);
-
+        expect(systemResponse.getPayload()).to.eql(data['payload']);
+        expect(systemResponse.getName()).to.eql(data['name']);
+        expect(systemResponse).to.be.an.instanceof(SystemResponse);
     });
 });
