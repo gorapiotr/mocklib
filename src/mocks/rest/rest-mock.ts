@@ -1,12 +1,12 @@
 import {Mock} from "../../model/mock";
 
 //socket decorator
-export class RestMock {
+export class RestMock{
 
-    protected _restSettings: Array<any>;
+    protected _restSettings: any;
     protected _mock: Mock;
 
-    constructor(restSettings: Array<any>, mock: Mock) {
+    constructor(restSettings: any, mock: Mock) {
         this._restSettings = restSettings;
         this._mock = mock;
     }

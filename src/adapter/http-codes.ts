@@ -8,6 +8,6 @@ export class HttpCodes implements HttpCodesAdapter{
     }
 }
 
-interface HttpCodesAdapter {
+export interface HttpCodesAdapter {
     checkCode(code: string): boolean;
 }
