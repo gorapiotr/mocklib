@@ -18,7 +18,7 @@ export class RestMock{
         return this._mock.getPayload();
     }
 
-    public restSettings(): Array<any> {
+    public restSettings(): any {
         return this._restSettings;
     }
 }

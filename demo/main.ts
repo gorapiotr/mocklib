@@ -10,9 +10,14 @@ export class Main {
 
 
     static main() {
+       this.firstMock();
+       this.secondMock();
+    }
+
+    static firstMock() {
         let payload: any = {
             "a": "a",
-            "b": "b"
+            "b": "b",
         };
 
         const factory = new BasicFactory();
@@ -20,7 +25,29 @@ export class Main {
         user.setPayload(payload);
 
         const restSettings: any = {
-            routing: 'user'
+            routing: 'user',
+            method: 'GET',
+            statusCode: '200'
+        };
+        let restUser = new RestUser(restSettings, user);
+
+        RestScope.addMock(restUser);
+    }
+
+    static secondMock() {
+        let payload: any = {
+            "z": "asdasdas",
+            "4": "asdasd"
+        };
+
+        const factory = new BasicFactory();
+        let user = factory.createUser();
+        user.setPayload(payload);
+
+        const restSettings: any = {
+            routing: 'basic-routing',
+            method: 'POST',
+            statusCode: '201'
         };
         let restUser = new RestUser(restSettings, user);
 

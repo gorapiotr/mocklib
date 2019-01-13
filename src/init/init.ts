@@ -2,13 +2,13 @@ export abstract class ServerInit implements iInit {
 
     public run(): void {
         this.checkConnection();
-        this.registerMocks();
-        this.registerMocksOnServer();
     }
 
     abstract checkConnection(): void;
 
     abstract registerMocks(): void;
+
+    abstract checkMocks(): void;
 
     abstract registerMocksOnServer(): void;
 }
@@ -19,6 +19,8 @@ export interface iInit {
     checkConnection(): void;
 
     registerMocks(): void;
+
+    checkMocks(): void;
 
     registerMocksOnServer(): void;
 }
