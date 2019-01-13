@@ -2,7 +2,7 @@ import 'mocha';
 import {expect} from 'chai';
 import {RestInit} from "../../src/init/rest-init";
 
-describe('init (Template Method)', () => {
+describe('Init (Template Method)', () => {
 
     it('basic test', () => {
 
